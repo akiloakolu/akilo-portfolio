@@ -1,4 +1,5 @@
 import Hero from "@/components/sections/Hero";
+import ExecutiveImpact from "@/components/sections/ExecutiveImpact";
 import ImpactMetrics from "@/components/sections/ImpactMetrics";
 import About from "@/components/sections/About";
 import TechnologyStack from "@/components/sections/TechnologyStack";
@@ -12,6 +13,8 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-slate-950 pt-16 text-white">
       <Hero />
+
+      <ExecutiveImpact />
 
       <ImpactMetrics />
 
