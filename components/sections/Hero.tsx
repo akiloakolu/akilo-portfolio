@@ -224,7 +224,7 @@ export default function Hero() {
                 }}
               >
                 <Image
-                  src="/images/profile.png"
+                  src="/images/profile.jpeg"
                   alt="Akilo"
                   width={480}
                   height={480}
