@@ -10,7 +10,7 @@ import Footer from "@/components/sections/Footer";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white">
+    <main className="min-h-screen bg-slate-950 pt-16 text-white">
       <Hero />
 
       <ImpactMetrics />
