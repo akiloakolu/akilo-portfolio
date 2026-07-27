@@ -1,124 +1,150 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Card } from "@/components/ui/card";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
-import { projects } from "@/data/projects";
-import ProjectCard from "@/components/projects/ProjectCard";
+import { projects, Project } from "@/data/projects";
+
+import FeaturedProject from "@/components/projects/FeaturedProject";
+import ProjectCaseStudy from "@/components/projects/ProjectCaseStudy";
+import ProjectTabs from "@/components/projects/ProjectTabs";
 
 export default function Projects() {
+  const defaultProject =
+    projects.find((project) => project.featured) ??
+    projects[0];
+
+  const [selectedProject, setSelectedProject] =
+    useState<Project>(defaultProject);
+
+  const supportingProjects = projects.filter(
+    (project) => project.id !== selectedProject.id
+  );
+
   return (
     <section
       id="projects"
-      className="bg-slate-950 py-24"
+      className="relative py-24 lg:py-32"
     >
-      <div className="container mx-auto px-6">
-
-        {/* Header */}
+      <div className="container mx-auto max-w-7xl px-6">
+        {/* ========================= */}
+        {/* Section Heading */}
+        {/* ========================= */}
 
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="mb-16 text-center"
+          transition={{ duration: 0.6 }}
+          className="mx-auto mb-20 max-w-3xl text-center"
         >
-          <p className="font-semibold uppercase tracking-[0.3em] text-cyan-400">
-            Featured Projects
-          </p>
+          <span className="mb-4 inline-flex rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-sm font-medium text-emerald-400">
+            Featured Work
+          </span>
 
-          <h2 className="mt-4 text-4xl font-bold text-white lg:text-5xl">
-            Enterprise AI Governance Portfolio
+          <h2 className="text-4xl font-bold tracking-tight text-white md:text-5xl">
+            Enterprise AI Governance & Cybersecurity Projects
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl leading-8 text-slate-400">
-            A curated portfolio of enterprise solutions demonstrating
-            AI Governance, Technology Risk, Cybersecurity,
-            Cloud Security, Compliance, and Secure Software Engineering.
+          <p className="mt-6 text-lg leading-8 text-zinc-400">
+            A portfolio of enterprise-focused solutions spanning
+            AI governance, technology risk, cybersecurity
+            operations, cloud security, and executive reporting.
           </p>
         </motion.div>
 
-        {/* Featured Case Studies */}
+        {/* ========================= */}
+        {/* Project Navigation */}
+        {/* ========================= */}
 
-        <div className="mt-20">
+        <ProjectTabs
+          projects={projects}
+          selectedProject={selectedProject}
+          onSelect={setSelectedProject}
+        />
 
-          {projects.map((project, index) => {
+        {/* ========================= */}
+        {/* Featured Project */}
+        {/* ========================= */}
 
-            const Preview = project.preview;
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={selectedProject.id}
+            initial={{
+              opacity: 0,
+              y: 40,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            exit={{
+              opacity: 0,
+              y: -30,
+            }}
+            transition={{
+              duration: 0.45,
+            }}
+            className="mb-28"
+          >
+            <FeaturedProject
+              project={selectedProject}
+            />
+          </motion.div>
+        </AnimatePresence>
 
-            return (
-
-              <ProjectCard
-                key={project.title}
-
-                title={project.title}
-
-                subtitle={project.subtitle}
-
-                challenge={project.challenge}
-
-                solution={project.solution}
-
-                impact={project.impact}
-
-                technologies={project.technologies}
-
-                github={project.github}
-
-                demo={project.demo}
-
-                preview={<Preview />}
-
-                reverse={index % 2 === 1}
-              />
-
-            );
-
-          })}
-
-        </div>
-                {/* Bottom Banner */}
+        {/* ========================= */}
+        {/* More Case Studies */}
+        {/* ========================= */}
 
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{
-            duration: 0.7,
-            delay: 0.2,
+          initial={{
+            opacity: 0,
+            y: 20,
           }}
-          className="mt-24"
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{ once: true }}
+          className="mb-12 text-center"
         >
-          <Card className="rounded-3xl border border-slate-800 bg-gradient-to-r from-slate-900 via-slate-900 to-slate-800 p-10">
+          <h3 className="text-3xl font-bold text-white">
+            More Case Studies
+          </h3>
 
-            <div className="mx-auto max-w-4xl text-center">
-
-              <p className="mb-3 font-semibold uppercase tracking-[0.3em] text-cyan-400">
-                Enterprise Engineering Philosophy
-              </p>
-
-              <h3 className="text-3xl font-bold text-white md:text-4xl">
-                Building Secure AI Systems That Organizations Can Trust
-              </h3>
-
-              <p className="mt-6 leading-8 text-slate-300">
-                Every project in this portfolio is designed using enterprise
-                architecture principles and governance-first thinking. My work
-                combines AI Governance, Technology Risk Management,
-                Cybersecurity, Cloud Security, Compliance, and Secure Software
-                Engineering to help organizations adopt emerging technologies
-                responsibly while maintaining resilience, regulatory compliance,
-                and business trust.
-              </p>
-
-            </div>
-
-          </Card>
-
+          <p className="mt-3 text-zinc-400">
+            Additional enterprise security and governance
+            initiatives.
+          </p>
         </motion.div>
 
+        <div className="space-y-28">
+          {supportingProjects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={{
+                opacity: 0,
+                y: 35,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.08,
+              }}
+            >
+              <ProjectCaseStudy
+                project={project}
+                reverse={index % 2 === 1}
+              />
+            </motion.div>
+          ))}
+        </div>
       </div>
-
     </section>
   );
 }

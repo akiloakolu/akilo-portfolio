@@ -1,168 +1,361 @@
-import { ComponentType } from "react";
-
-import AIGovernancePreview from "@/components/projects/AIGovernancePreview";
-
 export interface Project {
+  id: string;
+  featured?: boolean;
+
   title: string;
-  subtitle: string;
+  category: string;
+  tagline: string;
+
+  image: string;
 
   challenge: string;
-
   solution: string;
 
-  impact: string[];
+  businessValue: string[];
 
   technologies: string[];
 
+  architecture: string[];
+
+  stats?: {
+  label: string;
+  value: string;
+}[];
+
   github: string;
-
-  demo: string;
-
-  featured?: boolean;
-
-  preview: ComponentType;
+  demo?: string;
 }
 
 export const projects: Project[] = [
   {
-    title: "RiskCommand AI",
-
-    subtitle:
-      "Enterprise AI Governance & Technology Risk Management Platform",
-
-    challenge:
-      "Organizations adopting AI often struggle with fragmented governance processes, disconnected risk registers, and limited visibility into AI model compliance across business units.",
-
-    solution:
-      "Designed and built a centralized AI Governance platform inspired by Archer IRM and ServiceNow. The platform enables AI inventory management, technology risk assessments, control mapping, executive dashboards, and compliance reporting through an intuitive interface.",
-
-    impact: [
-      "Enterprise AI Governance",
-      "Technology Risk Visibility",
-      "Executive Decision Support",
-      "Regulatory Compliance",
-    ],
-
-    technologies: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "MongoDB",
-      "Node.js",
-      "OpenAI API",
-    ],
-
-    github: "https://github.com/akiloakolu",
-
-    demo: "#",
-
+    id: "riskcommand",
     featured: true,
 
-    preview: AIGovernancePreview,
-  },
+    title: "RiskCommand AI",
 
-  {
-    title: "SecureOps AI",
+    category: "AI Governance",
 
-    subtitle:
-      "AI-Powered Security Operations Center Assistant",
+    tagline:
+      "Enterprise Technology Risk & AI Governance Platform",
 
-    challenge:
-      "Security analysts spend significant time manually triaging alerts, classifying incidents, and generating response recommendations, resulting in slower incident response.",
-
-    solution:
-      "Developed an AI-powered SOC assistant capable of analyzing alerts, assigning severity levels, recommending response actions, and presenting findings through a modern operational dashboard.",
-
-    impact: [
-      "Faster Incident Triage",
-      "Reduced Analyst Workload",
-      "Improved Threat Visibility",
-      "Security Automation",
-    ],
-
-    technologies: [
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Express",
-      "MongoDB",
-      "OpenAI API",
-    ],
-
-    github: "https://github.com/akiloakolu",
-
-    demo: "#",
-
-    preview: AIGovernancePreview,
-  },
-
-  {
-    title: "Enterprise AI Governance Dashboard",
-
-    subtitle:
-      "Executive AI Risk & Compliance Reporting",
+    image: "/images/projects/riskcommand.png",
 
     challenge:
-      "Executive leadership requires clear visibility into AI governance metrics, compliance posture, and operational risks without navigating technical security tools.",
+      "Organizations require a centralized platform to manage AI risks, technology governance, regulatory compliance, and executive reporting across the enterprise.",
 
     solution:
-      "Created an executive dashboard that visualizes AI risk scores, regulatory compliance, governance maturity, and enterprise KPIs using interactive analytics.",
+      "Designed and developed an enterprise governance platform inspired by Archer and ServiceNow IRM that centralizes AI inventories, risk registers, control mapping, policy management, and executive dashboards.",
 
-    impact: [
-      "Executive Reporting",
-      "Governance Metrics",
-      "Compliance Monitoring",
-      "Business Intelligence",
+    businessValue: [
+      "Enterprise AI Governance",
+      "Technology Risk Management",
+      "Executive Dashboards",
+      "AI Risk Register",
+      "ISO 42001 Alignment",
+      "NIST AI RMF Alignment",
+      "Responsible AI Governance"
     ],
 
     technologies: [
       "Next.js",
       "React",
       "TypeScript",
-      "Framer Motion",
       "Tailwind CSS",
+      "Node.js",
+      "MongoDB",
+      "OpenAI API"
     ],
 
-    github: "https://github.com/akiloakolu",
+    architecture: [
+  "Next.js",
+  "Express API",
+  "OpenAI",
+  "MongoDB",
+],
 
-    demo: "#",
+stats: [
+  {
+    value: "98%",
+    label: "Detection Accuracy",
+  },
+  {
+    value: "60%",
+    label: "Faster Response",
+  },
+  {
+    value: "24/7",
+    label: "AI Monitoring",
+  },
+  {
+    value: "NIST",
+    label: "AI Governance",
+  },
+],
 
-    preview: AIGovernancePreview,
+
+    github: "https://github.com/akiloakolu/riskcommand-ai",
+
+    demo: "https://riskcommand.vercel.app"
   },
 
   {
-    title: "Enterprise Security Labs",
+    id: "secureops",
 
-    subtitle:
-      "Cloud Security, Zero Trust & Infrastructure Projects",
+    title: "SecureOps AI",
+
+    category: "Cybersecurity",
+
+    tagline:
+      "AI-powered Security Operations Copilot",
+
+    image: "/images/projects/secureops.png",
 
     challenge:
-      "Hands-on experience with enterprise technologies is essential for validating secure architecture, cloud security, and zero-trust implementation strategies.",
+      "Security analysts spend significant time triaging alerts, correlating incidents, and documenting investigations.",
 
     solution:
-      "Completed a portfolio of enterprise security labs covering Microsoft Azure, Active Directory, Hyper-V, SIEM, networking, identity management, Zero Trust, and cloud infrastructure.",
+      "Built an AI-powered SOC assistant that prioritizes alerts, recommends remediation steps, summarizes incidents, and supports analyst workflows.",
 
-    impact: [
-      "Cloud Security",
-      "Infrastructure Hardening",
+    businessValue: [
+      "Threat Detection",
+      "Incident Response",
+      "SOC Automation",
+      "Executive Reporting",
+      "AI-assisted Investigation"
+    ],
+
+    technologies: [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "OpenAI",
+      "Tailwind CSS"
+    ],
+
+    architecture: [
+      "React",
+      "API",
+      "OpenAI",
+      "MongoDB"
+    ],
+    
+    stats: [
+  {
+    value: "95%",
+    label: "Alert Accuracy",
+  },
+  {
+    value: "50%",
+    label: "Faster Triage",
+  },
+  {
+    value: "24/7",
+    label: "AI Monitoring",
+  },
+  {
+    value: "SOC",
+    label: "Automation",
+  },
+],
+
+    github: "https://github.com/akiloakolu/secureops-ai",
+
+    demo: "https://secureops-ai.vercel.app"
+  },
+
+  {
+    id: "ai-governance",
+
+    title: "AI Governance Dashboard",
+
+    category: "Responsible AI",
+
+    tagline:
+      "Governance, Compliance & AI Lifecycle Management",
+
+    image: "/images/projects/governance.png",
+
+    challenge:
+      "Organizations need visibility into AI models, governance processes, risk posture, and compliance with emerging AI regulations.",
+
+    solution:
+      "Developed a governance dashboard that tracks AI inventories, model lifecycle, risk scoring, control compliance, and executive reporting.",
+
+    businessValue: [
+      "Model Inventory",
+      "AI Risk Scoring",
+      "Compliance Monitoring",
+      "Executive Reporting",
+      "Responsible AI"
+    ],
+
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Chart.js",
+      "Tailwind CSS"
+    ],
+    
+    stats: [
+  {
+    value: "100%",
+    label: "Model Inventory",
+  },
+  {
+    value: "ISO 42001",
+    label: "Compliance",
+  },
+  {
+    value: "NIST",
+    label: "AI Governance",
+  },
+  {
+    value: "360°",
+    label: "Executive Visibility",
+  },
+],
+
+    architecture: [
+      "Dashboard",
+      "Analytics",
+      "Governance Engine",
+      "Reporting"
+    ],
+
+    github: "https://github.com/akiloakolu/ai-governance-dashboard",
+
+    demo: "https://ai-governance.vercel.app"
+  },
+
+  {
+    id: "cloud-security",
+
+    title: "Enterprise Cloud Security",
+
+    category: "Cloud Security",
+
+    tagline:
+      "Azure • AWS • Identity & Zero Trust",
+
+    image: "/images/projects/cloud-security.png",
+
+    challenge:
+      "Modern enterprises require secure cloud environments with centralized identity, governance, and Zero Trust controls.",
+
+    solution:
+      "Implemented enterprise cloud security architectures leveraging Microsoft Entra ID, Microsoft Defender, Azure, AWS, and Zero Trust principles.",
+
+    businessValue: [
+      "Identity Security",
       "Zero Trust",
-      "Enterprise Architecture",
+      "Cloud Governance",
+      "Hybrid Security",
+      "Secure Access"
     ],
 
     technologies: [
       "Azure",
-      "Microsoft Sentinel",
-      "Hyper-V",
-      "Windows Server",
-      "PowerShell",
-      "Active Directory",
+      "AWS",
+      "Microsoft Entra ID",
+      "Microsoft Defender",
+      "Microsoft Sentinel"
     ],
 
-    github: "https://github.com/akiloakolu",
-
-    demo: "#",
-
-    preview: AIGovernancePreview,
+    architecture: [
+      "Users",
+      "Identity",
+      "Cloud",
+      "Defender",
+      "Monitoring"
+    ],
+    
+    stats: [
+  {
+    value: "Zero Trust",
+    label: "Architecture",
   },
+  {
+    value: "Azure",
+    label: "Cloud Platform",
+  },
+  {
+    value: "AWS",
+    label: "Multi-Cloud",
+  },
+  {
+    value: "24/7",
+    label: "Security Monitoring",
+  },
+],
+
+    github: "https://github.com/akiloakolu/cloud-security",
+
+    demo: ""
+  },
+
+  {
+    id: "soc-dashboard",
+
+    title: "SOC Threat Detection Dashboard",
+
+    category: "Security Operations",
+
+    tagline:
+      "Threat Hunting & Detection Engineering",
+
+    image: "/images/projects/soc-dashboard.png",
+
+    challenge:
+      "Security Operations Centers require centralized visibility into threats, detections, and incidents.",
+
+    solution:
+      "Developed a SOC dashboard integrating SIEM analytics, MITRE ATT&CK mapping, threat intelligence, and executive reporting.",
+
+    businessValue: [
+      "Threat Hunting",
+      "Detection Engineering",
+      "MITRE ATT&CK",
+      "Incident Management",
+      "Security Analytics"
+    ],
+
+    technologies: [
+      "Microsoft Sentinel",
+      "Splunk",
+      "QRadar",
+      "KQL",
+      "MITRE ATT&CK"
+    ],
+
+    architecture: [
+      "SIEM",
+      "Threat Intelligence",
+      "Analytics",
+      "Dashboard"
+    ],
+    
+    stats: [
+  {
+    value: "MITRE",
+    label: "ATT&CK Framework",
+  },
+  {
+    value: "SIEM",
+    label: "Threat Analytics",
+  },
+  {
+    value: "99%",
+    label: "Threat Visibility",
+  },
+  {
+    value: "SOC",
+    label: "Operations",
+  },
+],
+
+    github: "https://github.com/akiloakolu/soc-dashboard",
+
+    demo: ""
+  }
 ];

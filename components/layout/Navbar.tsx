@@ -48,15 +48,15 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+    <header className="fixed inset-x-0 top-5 z-50">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-slate-950/70 px-8 shadow-2xl backdrop-blur-2xl">
 
         {/* Logo */}
         <button
           onClick={() => scrollToSection("home")}
           className="text-2xl font-bold tracking-tight text-white"
         >
-          AKILO<span className="text-cyan-400">.</span>
+          AKILO<span className="text-emerald-400">.</span>
         </button>
 
         {/* Desktop */}
@@ -66,25 +66,25 @@ export default function Navbar() {
               key={item.id}
               type="button"
               onClick={() => scrollToSection(item.id)}
-              className={`relative pb-1 text-sm font-medium transition-colors duration-300 ${
-                activeSection === item.id
-                  ? "text-cyan-400"
-                  : "text-slate-300 hover:text-cyan-400"
-              }`}
+              className={`relative rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 ${
+  activeSection === item.id
+    ? "bg-emerald-500/20 text-emerald-400"
+    : "text-slate-300 hover:bg-white/5 hover:text-white"
+}`}
             >
               {item.name}
 
               {activeSection === item.id && (
-                <motion.div
-                  layoutId="nav-indicator"
-                  className="absolute bottom-0 left-0 h-[2px] w-full rounded-full bg-cyan-400"
-                  transition={{
-                    type: "spring",
-                    stiffness: 500,
-                    damping: 35,
-                  }}
-                />
-              )}
+  <motion.div
+    layoutId="nav-indicator"
+    className="absolute bottom-0 left-0 h-[2px] w-full rounded-full bg-emerald-400"
+    transition={{
+      type: "spring",
+      stiffness: 500,
+      damping: 35,
+    }}
+  />
+)}
             </button>
           ))}
         </nav>
@@ -92,12 +92,13 @@ export default function Navbar() {
         {/* Resume */}
         <div className="hidden lg:block">
           <Button
-            onClick={() =>
-              window.open("/Akilo_Resume.pdf", "_blank")
-            }
-          >
-            Resume
-          </Button>
+  onClick={() =>
+    window.open("/Akilo_Resume.pdf", "_blank")
+  }
+  className="rounded-full bg-emerald-500 px-6 text-black hover:bg-emerald-400"
+>
+  Resume
+</Button>
         </div>
 
         {/* Mobile */}

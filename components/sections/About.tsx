@@ -20,7 +20,7 @@ export default function About() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: .7 }}
+          transition={{ duration: 0.7 }}
           className="grid gap-16 lg:grid-cols-2 lg:items-center"
         >
 
