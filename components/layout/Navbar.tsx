@@ -93,7 +93,7 @@ export default function Navbar() {
         <div className="hidden lg:block">
           <Button
   onClick={() =>
-    window.open("/Akilo_Resume.pdf", "_blank")
+    window.open("/AkiloA_Resume.pdf", "_blank")
   }
   className="rounded-full bg-emerald-500 px-6 text-black hover:bg-emerald-400"
 >
@@ -138,7 +138,7 @@ export default function Navbar() {
               <Button
                 className="mt-8 w-full"
                 onClick={() =>
-                  window.open("/Akilo_Resume.pdf", "_blank")
+                  window.open("/AkiloA_Resume.pdf", "_blank")
                 }
               >
                 Download Resume

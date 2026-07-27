@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-
+import BackToTop from "@/components/ui/BackToTop";
 import "./globals.css";
 import BackgroundEffects from "@/components/layout/BackgroundEffects";
+
 
 import Navbar from "@/components/layout/Navbar";
 import ScrollProgress from "@/components/layout/ScrollProgress";
@@ -77,6 +78,7 @@ export default function RootLayout({
         <Navbar />
 
         {children}
+        <BackToTop />
       </body>
     </html>
   );
