@@ -16,7 +16,10 @@ export default function ExecutiveImpact() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{
+  duration: 0.7,
+  ease: "easeOut",
+}}
           className="mx-auto max-w-3xl text-center"
         >
           <span className="rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-300">
@@ -28,10 +31,9 @@ export default function ExecutiveImpact() {
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-slate-400">
-            Helping organizations strengthen AI governance,
-            cybersecurity, enterprise risk management,
-            and cloud security through practical,
-            business-focused solutions.
+            Helping organizations strengthen AI governance, cybersecurity,
+            enterprise risk management, and cloud security through practical,
+            risk-informed solutions that align security with business objectives.
           </p>
         </motion.div>
 

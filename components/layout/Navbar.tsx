@@ -13,7 +13,7 @@ import {
 import { useActiveSection } from "@/hooks/useActiveSection";
 
 const navItems = [
-  { name: "Home", id: "home" },
+  { name: "Home", id: "hero" },
   { name: "About", id: "about" },
   { name: "Impact", id: "impact" },
   { name: "Technology", id: "technology" },

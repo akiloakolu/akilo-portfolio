@@ -21,7 +21,11 @@ export default function FeaturedProject({
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
+      transition={{
+  duration: 0.6,
+  ease: "easeOut",
+}}
+                  
       className="overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/40 backdrop-blur"
     >
       <div className="grid gap-12 p-8 lg:grid-cols-2 lg:p-12">
@@ -64,7 +68,29 @@ export default function FeaturedProject({
           </section>
 
           {/* Business Value */}
-          <section className="space-y-4">
+<section className="space-y-4">
+  <h3 className="text-lg font-semibold text-white">
+    Business Value
+  </h3>
+
+  <ProjectValue
+    values={project.businessValue}
+  />
+</section>
+
+{/* Technology Stack */}
+<section className="space-y-4">
+  <h3 className="text-lg font-semibold text-white">
+    Technology Stack
+  </h3>
+
+  <ProjectTech
+    technologies={project.technologies}
+  />
+</section>
+
+{/* Solution Architecture */}
+<section className="space-y-4">
   <h3 className="text-lg font-semibold text-white">
     Solution Architecture
   </h3>
@@ -74,27 +100,6 @@ export default function FeaturedProject({
   />
 </section>
 
-          {/* Technology Stack */}
-          <section className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">
-              Technology Stack
-            </h3>
-
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5 text-zinc-500">
-              ProjectTech component coming next...
-            </div>
-          </section>
-
-          {/* Architecture */}
-          <section className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">
-              Architecture
-            </h3>
-
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5 text-zinc-500">
-              ArchitectureFlow component coming next...
-            </div>
-          </section>
 
           {/* Buttons */}
           <div className="flex flex-wrap gap-4 pt-2">
@@ -103,7 +108,7 @@ export default function FeaturedProject({
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 font-medium text-black transition hover:bg-zinc-200"
+                className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 font-medium text-black transition transition-all duration-300 hover:bg-zinc-200"
               >
                 <GitBranch size={18} />
                 Source Code
@@ -115,7 +120,7 @@ export default function FeaturedProject({
                 href={project.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl border border-zinc-700 px-5 py-3 font-medium text-white transition hover:bg-zinc-800"
+                className="inline-flex items-center gap-2 rounded-xl border border-zinc-700 px-5 py-3 font-medium text-white transition transition-all duration-300 hover:bg-zinc-800"
               >
                 <ExternalLink size={18} />
                 Live Demo

@@ -40,13 +40,15 @@ export default function ArchitectureFlow({
               }}
               viewport={{ once: true }}
               transition={{
-                duration: 0.4,
-                delay: index * 0.12,
-              }}
+  duration: 0.4,
+  delay: index * 0.12,
+  ease: "easeOut",
+}}
               whileHover={{
-                scale: 1.03,
-              }}
-              className="w-full rounded-xl border border-zinc-700 bg-zinc-800/60 px-5 py-4 text-center transition-colors hover:border-emerald-500 hover:bg-emerald-500/10"
+  scale: 1.03,
+  y: -2,
+}}
+              className="w-full transform-gpu rounded-xl border border-zinc-700 bg-zinc-800/60 px-5 py-4 text-center transition-all duration-300 hover:border-emerald-500 hover:bg-emerald-500/10"
             >
               <span className="text-sm font-semibold text-zinc-100">
                 {step}

@@ -25,7 +25,7 @@ export default function ProjectTech({
             y: -4,
             scale: 1.05,
           }}
-          className="rounded-xl border border-zinc-700 bg-zinc-900/60 px-4 py-2 text-sm font-medium text-zinc-200 transition-colors hover:border-emerald-500 hover:bg-emerald-500/10 hover:text-emerald-300"
+          className="transform-gpu rounded-xl border border-zinc-700 bg-zinc-900/60 px-4 py-2 text-sm font-medium text-zinc-200 transition-colors hover:border-emerald-500 hover:bg-emerald-500/10 hover:text-emerald-300"
         >
           {tech}
         </motion.div>

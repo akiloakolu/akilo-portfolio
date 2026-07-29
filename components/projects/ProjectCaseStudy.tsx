@@ -21,7 +21,10 @@ export default function ProjectCaseStudy({
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
+      transition={{
+  duration: 0.6,
+  ease: "easeOut",
+}}
       className={`grid gap-12 items-center lg:grid-cols-2 ${
         reverse ? "lg:[&>*:first-child]:order-2" : ""
       }`}
@@ -85,11 +88,35 @@ export default function ProjectCaseStudy({
           </p>
         </div>
 
-        <ProjectValue values={project.businessValue} />
+        <section className="space-y-4">
+  <h4 className="font-semibold text-white">
+    Business Value
+  </h4>
 
-        <ProjectTech technologies={project.technologies} />
+  <ProjectValue
+    values={project.businessValue}
+  />
+</section>
 
-        <ArchitectureFlow architecture={project.architecture} />
+<section className="space-y-4">
+  <h4 className="font-semibold text-white">
+    Technology Stack
+  </h4>
+
+  <ProjectTech
+    technologies={project.technologies}
+  />
+</section>
+
+<section className="space-y-4">
+  <h4 className="font-semibold text-white">
+    Solution Architecture
+  </h4>
+
+  <ArchitectureFlow
+    steps={project.architecture}
+  />
+</section>
 
         <div className="flex flex-wrap gap-4 pt-2">
           {project.github && (

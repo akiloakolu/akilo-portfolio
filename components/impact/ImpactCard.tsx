@@ -21,10 +21,13 @@ export default function ImpactCard({ card }: Props) {
         y: -8,
         scale: 1.02,
       }}
-      transition={{ duration: 0.25 }}
-      className="group rounded-3xl border border-white/10 bg-gradient-to-b from-slate-900/80 to-slate-950 p-8 shadow-xl transition-all hover:border-cyan-400/50 hover:shadow-cyan-500/20"
+      transition={{
+        duration: 0.35,
+        ease: "easeOut",
+      }}
+      className="group transform-gpu overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-slate-900/80 to-slate-950 p-8 shadow-xl transition-all duration-300 hover:border-cyan-400/50 hover:shadow-cyan-500/20"
     >
-      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-500/10 text-cyan-400">
+      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-500/10 text-cyan-400 transition-all duration-300 group-hover:scale-110 group-hover:bg-cyan-500/20">
         <Icon size={28} />
       </div>
 
@@ -40,7 +43,7 @@ export default function ImpactCard({ card }: Props) {
         {card.subtitle}
       </div>
 
-      <p className="mt-5 text-sm leading-7 text-slate-400">
+      <p className="mt-5 text-[15px] leading-7 text-slate-400">
         {card.description}
       </p>
     </motion.div>

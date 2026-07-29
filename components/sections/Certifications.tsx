@@ -8,9 +8,10 @@ import { certifications } from "@/data/certifications";
 export default function Certifications() {
   return (
     <section
-      id="certifications"
-      className="bg-slate-950 py-28"
-    >
+  id="certifications"
+  aria-labelledby="certifications-heading"
+  className="bg-slate-950 py-28"
+>
       <div className="mx-auto max-w-7xl px-6">
 
         <motion.div
@@ -24,9 +25,12 @@ export default function Certifications() {
             Professional Credentials
           </span>
 
-          <h2 className="mt-8 text-5xl font-black text-white">
-            Certifications
-          </h2>
+          <h2
+  id="certifications-heading"
+  className="mt-8 text-5xl font-black leading-tight text-white"
+>
+  Certifications
+</h2>
 
           <p className="mt-6 text-lg leading-8 text-slate-400">
             Industry-recognized certifications spanning cybersecurity,
@@ -35,35 +39,54 @@ export default function Certifications() {
           </p>
         </motion.div>
 
-        <div className="mt-20">
-          <h3 className="mb-8 text-2xl font-bold text-white">
-            Certified
-          </h3>
+        <motion.div
+  className="mt-20"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{
+    duration: 0.5,
+    ease: "easeOut",
+  }}
+>
+  <h3 className="mb-8 text-2xl font-bold tracking-tight text-white">
+    Certified
+  </h3>
 
-          <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-3">
-            {certifications.certified.map((cert) => (
-              <CertificationCard
-                key={cert.name}
-                certification={cert}
-              />
-            ))}
-          </div>
-        </div>
+  <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-3">
+    {certifications.certified.map((cert) => (
+      <CertificationCard
+        key={cert.name}
+        certification={cert}
+      />
+    ))}
+  </div>
+</motion.div>
 
-        <div className="mt-24">
-          <h3 className="mb-8 text-2xl font-bold text-white">
-            Currently Pursuing
-          </h3>
+        <motion.div
+  className="mt-24"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{
+    duration: 0.5,
+    ease: "easeOut",
+    delay: 0.1,
+  }}
+>
+  <h3 className="mb-8 text-2xl font-bold tracking-tight text-white">
+    Currently Pursuing
+  </h3>
 
-          <div className="grid gap-8 md:grid-cols-3">
-            {certifications.pursuing.map((cert) => (
-              <CertificationCard
-                key={cert.name}
-                certification={cert}
-              />
-            ))}
-          </div>
-        </div>
+  <div className="grid gap-8 md:grid-cols-3">
+    {certifications.pursuing.map((cert) => (
+      <CertificationCard
+        key={cert.name}
+        certification={cert}
+      />
+    ))}
+  </div>
+</motion.div>
 
       </div>
     </section>

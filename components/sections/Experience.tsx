@@ -63,9 +63,7 @@ export default function Experience() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-400">
-            Delivering measurable cybersecurity, governance,
-            compliance and enterprise risk outcomes across
-            regulated healthcare and financial institutions.
+            Delivering measurable AI governance, cybersecurity, technology risk, and regulatory compliance outcomes across highly regulated healthcare and financial services organizations.
           </p>
         </motion.div>
 
@@ -88,11 +86,11 @@ export default function Experience() {
             >
               {/* Timeline Dot */}
 
-              <div className="absolute left-2 top-10 hidden h-6 w-6 rounded-full border-4 border-slate-950 bg-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.8)] md:block" />
+              <div className="absolute left-2 top-10 hidden h-6 w-6 rounded-full border-4 border-slate-950 bg-cyan-400 shadow-[0_0_25px_rgba(34,211,238,0.9)] transition-all duration-300 group-hover:scale-110 md:block" />
 
               {/* Card */}
 
-              <div className="rounded-3xl border border-slate-800 bg-slate-900/70 p-8 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-[0_0_40px_rgba(34,211,238,0.18)]">
+              <div className="group transform-gpu overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/70 p-8 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/60 hover:shadow-[0_0_40px_rgba(34,211,238,0.18)]">
 
                 {/* Header */}
 
@@ -100,7 +98,7 @@ export default function Experience() {
 
                   <div>
 
-                    <div className="mb-3 flex items-center gap-2 text-cyan-400">
+                    <div className="mb-3 flex items-center gap-2 font-medium text-cyan-400">
                       <BriefcaseBusiness className="h-5 w-5" />
 
                       <span className="font-semibold">
@@ -108,7 +106,7 @@ export default function Experience() {
                       </span>
                     </div>
 
-                    <h3 className="text-3xl font-bold">
+                    <h3 className="text-3xl font-bold leading-tight">
                       {job.role}
                     </h3>
 
@@ -193,9 +191,11 @@ export default function Experience() {
 
                     {job.highlights.map((highlight) => (
 
-                      <div
-                        key={highlight}
-                        className="flex items-start gap-3"
+                      <motion.div
+                     key={highlight}
+                     whileHover={{ x: 4 }}
+                     transition={{ duration: 0.2 }}
+                     className="flex items-start gap-3"
                       >
 
                         <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-cyan-400" />
@@ -204,7 +204,7 @@ export default function Experience() {
                           {highlight}
                         </p>
 
-                      </div>
+                      </motion.div>
 
                     ))}
 
@@ -226,7 +226,7 @@ export default function Experience() {
 
                       <Badge
                         key={tech}
-                        className="border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-cyan-300 transition hover:scale-105"
+                        className="border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-cyan-300 transition-all duration-300 hover:scale-105 hover:bg-cyan-500/20"
                       >
                         {tech}
                       </Badge>

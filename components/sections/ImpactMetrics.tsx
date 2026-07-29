@@ -21,8 +21,8 @@ export default function ImpactMetrics() {
             Impact
           </p>
 
-          <h2 className="text-4xl font-bold">
-            Delivering Measurable Business Outcomes
+          <h2 className="text-4xl font-bold leading-tight">
+            Driving Measurable Business Outcomes
           </h2>
 
           <p className="mx-auto mt-5 max-w-3xl text-slate-300">
@@ -42,9 +42,11 @@ export default function ImpactMetrics() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
-                className="rounded-3xl border border-slate-800 bg-slate-900/60 p-8 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]"
+                className="group transform-gpu overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/60 p-8 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]"
               >
-                <Icon className="mb-6 h-10 w-10 text-cyan-400" />
+                <div className="mb-6 inline-flex rounded-2xl bg-cyan-500/10 p-3 text-cyan-400 transition-all duration-300 group-hover:scale-110 group-hover:bg-cyan-500/20">
+  <Icon className="h-10 w-10" />
+</div>
 
                 <h3 className="text-5xl font-bold text-white">
                   {metric.value}
@@ -54,7 +56,7 @@ export default function ImpactMetrics() {
                   {metric.label}
                 </p>
 
-                <p className="mt-4 text-slate-400">
+                <p className="mt-4 text-[15px] leading-7 text-slate-400">
                   {metric.description}
                 </p>
               </motion.div>

@@ -15,13 +15,20 @@ export default function ProjectTabs({
   onSelect,
 }: ProjectTabsProps) {
   return (
-    <div className="mb-12 flex flex-wrap justify-center gap-3">
+    <div
+  role="tablist"
+  aria-label="Project categories"
+  className="mb-12 flex flex-wrap justify-center gap-3"
+>
       {projects.map((project) => {
         const active = project.id === selectedProject.id;
 
         return (
           <motion.button
             key={project.id}
+            role="tab"
+            aria-selected={active}
+            aria-label={`View ${project.title} project`}
             whileHover={{
               y: -2,
               scale: 1.02,
@@ -30,21 +37,21 @@ export default function ProjectTabs({
               scale: 0.98,
             }}
             onClick={() => onSelect(project)}
-            className={`relative overflow-hidden rounded-full border px-5 py-3 text-sm font-medium transition-all duration-300 ${
-              active
-                ? "border-emerald-500 bg-emerald-500 text-black shadow-lg shadow-emerald-500/25"
-                : "border-zinc-700 bg-zinc-900/50 text-zinc-300 hover:border-emerald-400 hover:text-white"
-            }`}
+            className={`relative transform-gpu overflow-hidden rounded-full border px-5 py-3 text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 ${
+  active
+    ? "border-emerald-500 bg-emerald-500 text-black shadow-lg shadow-emerald-500/25"
+    : "border-zinc-700 bg-zinc-900/50 text-zinc-300 hover:border-emerald-400 hover:text-white"
+}`}
           >
             {active && (
               <motion.div
                 layoutId="activeProjectTab"
                 className="absolute inset-0 rounded-full bg-emerald-500"
                 transition={{
-                  type: "spring",
-                  stiffness: 450,
-                  damping: 35,
-                }}
+  type: "spring",
+  stiffness: 420,
+  damping: 32,
+}}
               />
             )}
 

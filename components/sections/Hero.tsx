@@ -27,7 +27,7 @@ const frameworks = [
 export default function Hero() {
   return (
     <section
-      id="home"
+      id="hero"
       className="relative overflow-hidden bg-slate-950 pt-28 pb-24 lg:pt-36 lg:pb-32"
     >
       {/* ================= Animated Background ================= */}
@@ -97,37 +97,62 @@ export default function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="mb-6 inline-flex items-center rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-sm font-medium text-cyan-300 backdrop-blur">
-            AI Governance • Technology Risk • Cybersecurity
-          </div>
+          {/* Availability Badge */}
 
-          <h1 className="text-5xl font-black leading-[1.05] tracking-[-0.03em] text-white md:text-6xl lg:text-7xl">
-            Building secure,
-            <span className="block text-cyan-400">
-              trustworthy AI
-            </span>
+<div className="mb-6 inline-flex items-center rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-sm font-medium text-cyan-300 backdrop-blur">
+  🟢 Open to AI Governance • GRC • Technology Risk Opportunities
+</div>
 
-            <span className="block text-white">
-              through governance,
-              cybersecurity,
-              and technology risk.
-            </span>
-          </h1>
+{/* Hero Heading */}
 
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-400">
-            I help organizations design and implement AI governance,
-            enterprise technology risk, cybersecurity,
-            responsible AI,
-            and regulatory compliance frameworks that are secure,
-            scalable, and aligned with business objectives.
-          </p>
+<h1 className="text-5xl font-black leading-[1.05] tracking-[-0.03em] text-white md:text-6xl lg:text-7xl">
+  Building secure,
+  <span className="block text-cyan-400">
+    trustworthy AI
+  </span>
 
-          {/* CTA Buttons */}
+  <span className="block text-white">
+    through governance,
+    cybersecurity,
+    and technology risk.
+  </span>
+</h1>
 
-          <div className="mt-10 flex flex-wrap gap-5">
+{/* Hero Description */}
+
+<p className="mt-8 max-w-2xl text-lg leading-8 text-slate-400">
+  I help organizations design and implement AI governance,
+  enterprise technology risk, cybersecurity,
+  responsible AI,
+  and regulatory compliance frameworks that are secure,
+  scalable, and aligned with business objectives.
+</p>
+
+{/* Trust Indicators */}
+
+<div className="mt-6 flex flex-wrap gap-3 text-sm text-slate-300">
+  <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1">
+    ✓ CISM Certified
+  </span>
+
+  <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1">
+    ✓ CRISC Certified
+  </span>
+
+  <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1">
+    ✓ CISSP Candidate
+  </span>
+
+  <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1">
+    ✓ Eligible to work in Canada
+  </span>
+</div>
+
+{/* CTA Buttons */}
+<div className="mt-10 flex flex-wrap gap-5">
 
             <a
-              href="/resume/Akilo_Resume.pdf"
+              href=" /AkiloA_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 rounded-xl bg-cyan-500 px-8 py-4 font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-cyan-400"
@@ -146,7 +171,7 @@ export default function Hero() {
               }
               className="inline-flex items-center gap-3 rounded-xl border border-slate-700 bg-slate-900/40 px-8 py-4 font-semibold text-white backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-400"
             >
-              View Projects
+              View Enterprise Projects
               <ArrowRight size={18} />
             </button>
 

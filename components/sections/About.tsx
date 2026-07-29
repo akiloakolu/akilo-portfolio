@@ -67,7 +67,7 @@ export default function About() {
 
           {/* Right Column */}
 
-          <Card className="rounded-3xl border border-slate-800 bg-slate-950 p-8">
+          <Card className="group transform-gpu overflow-hidden rounded-3xl border border-slate-800 bg-slate-950 p-8 transition-all duration-300 hover:border-cyan-400/40 hover:shadow-[0_0_30px_rgba(34,211,238,0.12)]">
 
             <h3 className="mb-8 text-2xl font-semibold text-white">
 
@@ -82,7 +82,10 @@ export default function About() {
                 <motion.div
                   key={item}
                   whileHover={{
-                    x: 6,
+                      x: 6,
+                  }}
+                  transition={{
+                  duration: 0.25,
                   }}
                   className="flex items-center gap-3"
                 >
@@ -112,7 +115,7 @@ export default function About() {
                   transition={{
                     duration: 0.25,
                   }}
-                  className="rounded-2xl border border-slate-800 bg-slate-900 p-6 text-center"
+                  className="group transform-gpu rounded-2xl border border-slate-800 bg-slate-900 p-6 text-center transition-all duration-300 hover:border-cyan-400/40 hover:bg-slate-800/80"
                 >
 
                   <h4 className="text-4xl font-bold text-cyan-400">
@@ -150,7 +153,7 @@ export default function About() {
           className="mx-auto mt-20 max-w-5xl"
         >
 
-          <Card className="rounded-3xl border border-cyan-500/20 bg-gradient-to-r from-slate-900 via-slate-900 to-slate-800 p-10">
+          <Card className="group transform-gpu overflow-hidden rounded-3xl border border-cyan-500/20 bg-gradient-to-r from-slate-900 via-slate-900 to-slate-800 p-10 transition-all duration-300 hover:border-cyan-400/40 hover:shadow-[0_0_35px_rgba(34,211,238,0.12)]">
 
             <div className="text-center">
 
@@ -162,11 +165,7 @@ export default function About() {
 
               <p className="mx-auto mt-6 max-w-3xl leading-8 text-slate-300">
 
-                My mission is to help organizations adopt Artificial Intelligence
-                securely, responsibly, and at scale by combining AI Governance,
-                Technology Risk Management, Cybersecurity, Cloud Security, and
-                internationally recognized frameworks such as NIST AI RMF,
-                ISO/IEC 42001, and the NIST Cybersecurity Framework.
+                My mission is to enable organizations to adopt and govern Artificial Intelligence securely, responsibly, and at enterprise scale by integrating AI governance, technology risk management, cybersecurity, cloud security, and globally recognized frameworks such as the NIST AI Risk Management Framework (AI RMF), ISO/IEC 42001, and the NIST Cybersecurity Framework into practical, business-driven solutions.
 
               </p>
 

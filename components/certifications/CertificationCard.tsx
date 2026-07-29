@@ -24,17 +24,18 @@ export default function CertificationCard({ certification }: Props) {
         scale: 1.02,
       }}
       transition={{
-        duration: 0.25,
-      }}
-      className="group rounded-3xl border border-white/10 bg-gradient-to-b from-slate-900/80 to-slate-950/90 p-8 backdrop-blur-xl shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/60 hover:shadow-cyan-500/20"
+  duration: 0.25,
+  ease: "easeOut",
+}}
+      className="group transform-gpu rounded-3xl border border-white/10 bg-gradient-to-b from-slate-900/80 to-slate-950/90 p-8 shadow-xl backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/60 hover:shadow-cyan-500/20"
     >
       <div className="flex items-center justify-between">
 
-        <div className="flex h-20 w-20 items-center justify-center rounded-2xl border border-white/10 bg-slate-900/70 shadow-lg shadow-cyan-500/5">
+        <div className="flex h-20 w-20 items-center justify-center rounded-2xl border border-white/10 bg-slate-900/70 shadow-lg shadow-cyan-500/5 transition-all duration-300 hover:border-cyan-400/50 hover:shadow-cyan-400/20">
 
   <Image
     src={certification.logo}
-    alt={certification.name}
+    alt={`${certification.issuer} certification logo`}
     width={70}
     height={70}
     className="object-contain"
@@ -63,11 +64,11 @@ export default function CertificationCard({ certification }: Props) {
         {certification.name}
       </h3>
 
-      <p className="mt-2 text-sm text-slate-400">
+      <p className="mt-2 text-sm leading-relaxed text-slate-400">
         {certification.fullName}
       </p>
 
-      <div className="mt-6 text-base font-semibold tracking-wide text-cyan-300">
+      <div className="mt-6 text-base font-semibold tracking-wide uppercase text-cyan-300">
         {certification.issuer}
       </div>
     </motion.div>
