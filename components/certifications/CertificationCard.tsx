@@ -31,15 +31,18 @@ export default function CertificationCard({ certification }: Props) {
     >
       <div className="flex items-center justify-between">
 
-        <div className="flex h-20 w-20 items-center justify-center rounded-2xl border border-white/10 bg-slate-900/70 shadow-lg shadow-cyan-500/5 transition-all duration-300 hover:border-cyan-400/50 hover:shadow-cyan-400/20">
-
+        <div className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-slate-900/70 shadow-lg shadow-cyan-500/5 transition-all duration-300 hover:border-cyan-400/50 hover:shadow-cyan-400/20"
+>
   <Image
-    src={certification.logo}
-    alt={`${certification.issuer} certification logo`}
-    width={70}
-    height={70}
-    className="object-contain"
-  />
+  src={certification.logo}
+  alt={`${certification.name} certification badge issued by ${certification.issuer}`}
+  width={70}
+  height={70}
+  quality={90}
+  sizes="70px"
+  loading="lazy"
+  className="object-contain"
+/>
 
 </div>
 

@@ -249,13 +249,16 @@ export default function Hero() {
                 }}
               >
                 <Image
-                  src="/images/profile.jpeg"
-                  alt="Akilo"
-                  width={480}
-                  height={480}
-                  priority
-                  className="relative rounded-3xl border border-white/10 object-cover shadow-[0_30px_100px_rgba(0,0,0,0.55)]"
-                />
+  src="/images/profile.jpeg"
+  alt="Professional portrait of Akilo, AI Governance and Technology Risk professional"
+  width={480}
+  height={480}
+  priority
+  fetchPriority="high"
+  quality={90}
+  sizes="(max-width: 768px) 90vw, 480px"
+  className="relative overflow-hidden rounded-3xl border border-white/10 object-cover shadow-[0_30px_100px_rgba(0,0,0,0.55)]"
+/>
               </motion.div>
 
               {/* Floating Cards */}
