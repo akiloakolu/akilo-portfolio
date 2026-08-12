@@ -11,9 +11,27 @@ import {
   Download,
 } from "lucide-react";
 
-import HeroStats from "@/components/hero/HeroStats";
+import dynamic from "next/dynamic";
+
 import FloatingCard from "@/components/hero/FloatingCard";
-import AIGovernanceDashboard from "@/components/hero/AIGovernanceDashboard";
+
+const HeroStats = dynamic(
+  () => import("@/components/hero/HeroStats"),
+  {
+    ssr: false,
+    loading: () => <div className="h-24" />,
+  }
+);
+
+const AIGovernanceDashboard = dynamic(
+  () => import("@/components/hero/AIGovernanceDashboard"),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="h-[420px] w-[420px] animate-pulse rounded-3xl bg-slate-900/40" />
+    ),
+  }
+);
 
 const frameworks = [
   "ISO 42001",
