@@ -1,5 +1,5 @@
 "use client";
-
+import ContactForm from "@/components/contact/ContactForm";
 import { motion } from "framer-motion";
 import {
   Mail,
@@ -44,6 +44,7 @@ export default function Contact() {
       className="relative bg-slate-900 py-24"
     >
       <div className="container mx-auto max-w-6xl px-6">
+
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -109,7 +110,7 @@ export default function Contact() {
             );
           })}
         </div>
-
+<ContactForm />
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
