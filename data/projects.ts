@@ -225,7 +225,7 @@ stats: [
 
     github: "https://github.com/akiloakolu/ai-governance-dashboard",
 
-    demo: "https://ai-governance.vercel.app"
+    demo: "https://ai-governance-dashboard-l31gbsybx-akiloakolus-projects.vercel.app"
   },
 
   {
