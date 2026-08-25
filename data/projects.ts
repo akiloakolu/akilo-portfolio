@@ -95,7 +95,7 @@ stats: [
 
     github: "https://github.com/akiloakolu/riskcommand-ai",
 
-    demo: "https://riskcommand.vercel.app"
+    demo: "https://riskcommand-ai.vercel.app"
   },
 
   {
